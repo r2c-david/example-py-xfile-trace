@@ -1,0 +1,15 @@
+rules:
+  - id: db-bad-data
+    languages:
+      - python
+    severity: ERROR
+    message: >
+      detected bad data going in the db
+    mode: taint
+    options: 
+      interfile: true
+    pattern-sources:
+      - pattern: |
+          "bad data"
+    pattern-sinks:
+      - pattern: db(...)
