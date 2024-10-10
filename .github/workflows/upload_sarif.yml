@@ -1,0 +1,13 @@
+on:
+    workflow_dispatch: {}
+name: upload-sarif
+jobs:
+    upload-sarif:
+        name: upload-sarif
+        runs-on: ubuntu-20.04
+        steps:
+        - name: Upload SARIF to GHAS Dashboard
+          uses: github/codeql-action/upload-sarif@v3
+          with:
+            sarif_file: flow.sarif.json
+  

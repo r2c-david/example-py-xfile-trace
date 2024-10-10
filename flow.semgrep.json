@@ -1,0 +1,210 @@
+{
+    "errors": [],
+    "interfile_languages_used": [
+        "Python"
+    ],
+    "paths": {
+        "scanned": [
+            "f1.py",
+            "f2.py",
+            "f3.py",
+            "flow.sarif.json",
+            "rule.yml"
+        ]
+    },
+    "results": [
+        {
+            "check_id": "r2c_david.db-bad-data",
+            "end": {
+                "col": 13,
+                "line": 4,
+                "offset": 38
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "some_bad_data",
+                            "location": {
+                                "end": {
+                                    "col": 14,
+                                    "line": 4,
+                                    "offset": 42
+                                },
+                                "path": "f1.py",
+                                "start": {
+                                    "col": 1,
+                                    "line": 4,
+                                    "offset": 29
+                                }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliCall",
+                        [
+                            [
+                                {
+                                    "end": {
+                                        "col": 12,
+                                        "line": 6,
+                                        "offset": 68
+                                    },
+                                    "path": "f1.py",
+                                    "start": {
+                                        "col": 1,
+                                        "line": 6,
+                                        "offset": 57
+                                    }
+                                },
+                                "handle_data"
+                            ],
+                            [
+                                {
+                                    "content": "data",
+                                    "location": {
+                                        "end": {
+                                            "col": 21,
+                                            "line": 3,
+                                            "offset": 49
+                                        },
+                                        "path": "f2.py",
+                                        "start": {
+                                            "col": 17,
+                                            "line": 3,
+                                            "offset": 45
+                                        }
+                                    }
+                                }
+                            ],
+                            [
+                                "CliCall",
+                                [
+                                    [
+                                        {
+                                            "end": {
+                                                "col": 17,
+                                                "line": 4,
+                                                "offset": 68
+                                            },
+                                            "path": "f2.py",
+                                            "start": {
+                                                "col": 5,
+                                                "line": 4,
+                                                "offset": 56
+                                            }
+                                        },
+                                        "persist_data"
+                                    ],
+                                    [
+                                        {
+                                            "content": "data",
+                                            "location": {
+                                                "end": {
+                                                    "col": 22,
+                                                    "line": 3,
+                                                    "offset": 23
+                                                },
+                                                "path": "f3.py",
+                                                "start": {
+                                                    "col": 18,
+                                                    "line": 3,
+                                                    "offset": 19
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    [
+                                        "CliLoc",
+                                        [
+                                            {
+                                                "end": {
+                                                    "col": 13,
+                                                    "line": 4,
+                                                    "offset": 38
+                                                },
+                                                "path": "f3.py",
+                                                "start": {
+                                                    "col": 5,
+                                                    "line": 4,
+                                                    "offset": 30
+                                                }
+                                            },
+                                            "db(data)"
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 27,
+                                    "line": 4,
+                                    "offset": 55
+                                },
+                                "path": "f1.py",
+                                "start": {
+                                    "col": 17,
+                                    "line": 4,
+                                    "offset": 45
+                                }
+                            },
+                            "\"bad data\""
+                        ]
+                    ]
+                },
+                "engine_kind": [
+                    "PRO_REQUIRED",
+                    {
+                        "interfile_taint": true,
+                        "interproc_taint": true,
+                        "proprietary_language": false
+                    }
+                ],
+                "fingerprint": "5b934b8125039bf45da18cda5609ac1443da3b8a0a6c3214146b81961facf8da205ad21c0af6b0e8cb33dfaaebc0443aa2d9b3366d0862957d6d902538f93425_0",
+                "is_ignored": false,
+                "lines": "    db(data)",
+                "message": "detected bad data going in the db\n",
+                "metadata": {
+                    "dev.semgrep.actions": [
+                        "monitor"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "custom",
+                            "r_id": 144609,
+                            "rule_id": "ZqUQ001",
+                            "rule_name": "r2c_david.db-bad-data",
+                            "rv_id": 920883,
+                            "url": "https://semgrep.dev/playground/r/yeTDg8P/r2c_david.db-bad-data",
+                            "version_id": "yeTDg8P"
+                        },
+                        "src": "unchanged"
+                    },
+                    "semgrep.policy": {
+                        "id": 53434,
+                        "name": "Rule Board - Audit column",
+                        "slug": "rule-board-audit"
+                    },
+                    "shortlink": "https://sg.run/WAddE",
+                    "source": "https://semgrep.dev/r/r2c_david.db-bad-data"
+                },
+                "metavars": {},
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "f3.py",
+            "start": {
+                "col": 5,
+                "line": 4,
+                "offset": 30
+            }
+        }
+    ],
+    "skipped_rules": [],
+    "version": "1.89.0"
+}
