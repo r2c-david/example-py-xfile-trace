@@ -6,6 +6,11 @@ jobs:
         name: upload-sarif
         runs-on: ubuntu-20.04
         steps:
+        - name: Archive code coverage results
+          uses: actions/upload-artifact@v4
+          with:
+            name: flow.sarif.json
+            path: flow.sarif.json
         - name: Upload SARIF to GHAS Dashboard
           uses: github/codeql-action/upload-sarif@v3
           with:
