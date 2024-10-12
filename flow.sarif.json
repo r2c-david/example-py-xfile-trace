@@ -1,165 +1,238 @@
 {
-  "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/schemas/sarif-schema-2.1.0.json",
-  "runs": [
-    {
-      "invocations": [
+    "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/schemas/sarif-schema-2.1.0.json",
+    "runs": [
         {
-          "executionSuccessful": true,
-          "toolExecutionNotifications": []
-        }
-      ],
-      "results": [
-        {
-          "codeFlows": [
-            {
-              "message": {
-                "text": "Untrusted dataflow from f1.py:4 to f3.py:4"
-              },
-              "threadFlows": [
+            "invocations": [
                 {
-                  "locations": [
-                    {
-                      "location": {
-                        "message": {
-                          "text": "Source: '\"bad data\"' @ 'f1.py:4'"
-                        },
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "f3.py"
-                          },
-                          "region": {
-                            "endColumn": 27,
-                            "endLine": 4,
-                            "message": {
-                              "text": "Source: '\"bad data\"' @ 'f1.py:4'"
-                            },
-                            "snippet": {
-                              "text": "\"bad data\""
-                            },
-                            "startColumn": 17,
-                            "startLine": 4
-                          }
-                        }
-                      },
-                      "nestingLevel": 0
-                    },
-                    {
-                      "location": {
-                        "message": {
-                          "text": "Propagator : 'some_bad_data' @ 'f1.py:4'"
-                        },
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "f3.py"
-                          },
-                          "region": {
-                            "endColumn": 14,
-                            "endLine": 4,
-                            "message": {
-                              "text": "Propagator : 'some_bad_data' @ 'f1.py:4'"
-                            },
-                            "snippet": {
-                              "text": "some_bad_data"
-                            },
-                            "startColumn": 1,
-                            "startLine": 4
-                          }
-                        }
-                      },
-                      "nestingLevel": 0
-                    },
-                    {
-                      "location": {
-                        "message": {
-                          "text": "Sink: 'db(data)' @ 'f3.py:4'"
-                        },
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "f3.py"
-                          },
-                          "region": {
-                            "endColumn": 13,
-                            "endLine": 4,
-                            "message": {
-                              "text": "Sink: 'db(data)' @ 'f3.py:4'"
-                            },
-                            "snippet": {
-                              "text": "    db(data)"
-                            },
-                            "startColumn": 5,
-                            "startLine": 4
-                          }
-                        }
-                      },
-                      "nestingLevel": 1
-                    }
-                  ]
+                    "executionSuccessful": true,
+                    "toolExecutionNotifications": []
                 }
-              ]
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "5b934b8125039bf45da18cda5609ac1443da3b8a0a6c3214146b81961facf8da205ad21c0af6b0e8cb33dfaaebc0443aa2d9b3366d0862957d6d902538f93425_0"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "f3.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "endColumn": 13,
-                  "endLine": 4,
-                  "snippet": {
-                    "text": "    db(data)"
-                  },
-                  "startColumn": 5,
-                  "startLine": 4
+            ],
+            "results": [
+                {
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "f1.py"
+                                                    },
+                                                    "region": {
+                                                        "endColumn": 27,
+                                                        "endLine": 3,
+                                                        "startColumn": 17,
+                                                        "startLine": 3,
+                                                        "snippet": {
+                                                            "text": "\"bad data\""
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "nestingLevel": 0
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "f1.py"
+                                                    },
+                                                    "region": {
+                                                        "endColumn": 14,
+                                                        "endLine": 3,
+                                                        "startColumn": 1,
+                                                        "startLine": 3,
+                                                        "snippet": {
+                                                            "text": "some_bad_data"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "nestingLevel": 0
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "f1.py"
+                                                    },
+                                                    "region": {
+                                                        "endColumn": 12,
+                                                        "endLine": 5,
+                                                        "startColumn": 1,
+                                                        "startLine": 5,
+                                                        "snippet": {
+                                                            "text": "handle_data"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "nestingLevel": 0
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "f2.py"
+                                                    },
+                                                    "region": {
+                                                        "endColumn": 21,
+                                                        "endLine": 3,
+                                                        "startColumn": 17,
+                                                        "startLine": 3,
+                                                        "snippet": {
+                                                            "text": "data"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "nestingLevel": 0
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "f2.py"
+                                                    },
+                                                    "region": {
+                                                        "endColumn": 17,
+                                                        "endLine": 4,
+                                                        "startColumn": 5,
+                                                        "startLine": 4,
+                                                        "snippet": {
+                                                            "text": "renamed_data"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "nestingLevel": 0
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "f2.py"
+                                                    },
+                                                    "region": {
+                                                        "endColumn": 17,
+                                                        "endLine": 5,
+                                                        "startColumn": 5,
+                                                        "startLine": 5,
+                                                        "snippet": {
+                                                            "text": "persist_data"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "nestingLevel": 0
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "f3.py"
+                                                    },
+                                                    "region": {
+                                                        "endColumn": 22,
+                                                        "endLine": 1,
+                                                        "startColumn": 18,
+                                                        "startLine": 1,
+                                                        "snippet": {
+                                                            "text": "data"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "nestingLevel": 0
+                                        },
+                                        {
+                                            "location": {
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "f3.py"
+                                                    },
+                                                    "region": {
+                                                        "endColumn": 13,
+                                                        "endLine": 2,
+                                                        "startColumn": 5,
+                                                        "startLine": 2,
+                                                        "snippet": {
+                                                            "text": "db(data)"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "nestingLevel": 0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "fingerprints": {
+                        "matchBasedId/v1": "5b934b8125039bf45da18cda5609ac1443da3b8a0a6c3214146b81961facf8da205ad21c0af6b0e8cb33dfaaebc0443aa2d9b3366d0862957d6d902538f93425_0"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "f3.py",
+                                    "uriBaseId": "%SRCROOT%"
+                                },
+                                "region": {
+                                    "endColumn": 13,
+                                    "endLine": 2,
+                                    "snippet": {
+                                        "text": "    db(data)"
+                                    },
+                                    "startColumn": 5,
+                                    "startLine": 2
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "detected bad data going in the db\n"
+                    },
+                    "properties": {},
+                    "ruleId": "r2c_david.db-bad-data"
                 }
-              }
+            ],
+            "tool": {
+                "driver": {
+                    "name": "Semgrep Pro",
+                    "rules": [
+                        {
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "fullDescription": {
+                                "text": "detected bad data going in the db\n"
+                            },
+                            "help": {
+                                "markdown": "detected bad data going in the db\n\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/r2c_david.db-bad-data)\n",
+                                "text": "detected bad data going in the db\n"
+                            },
+                            "helpUri": "https://semgrep.dev/r/r2c_david.db-bad-data",
+                            "id": "r2c_david.db-bad-data",
+                            "name": "r2c_david.db-bad-data",
+                            "properties": {
+                                "precision": "high",
+                                "tags": [],
+                                "security-severity": "8.0"
+                            },
+                            "shortDescription": {
+                                "text": "[Semgrep Code] : 'db-bad-data'"
+                            }
+                        }
+                    ],
+                    "semanticVersion": "1.89.0"
+                }
             }
-          ],
-          "message": {
-            "text": "detected bad data going in the db\n"
-          },
-          "properties": {},
-          "ruleId": "r2c_david.db-bad-data"
         }
-      ],
-      "tool": {
-        "driver": {
-          "name": "Semgrep PRO",
-          "rules": [
-            {
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "fullDescription": {
-                "text": "detected bad data going in the db\n"
-              },
-              "help": {
-                "markdown": "detected bad data going in the db\n\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/r2c_david.db-bad-data)\n",
-                "text": "detected bad data going in the db\n"
-              },
-              "helpUri": "https://semgrep.dev/r/r2c_david.db-bad-data",
-              "id": "r2c_david.db-bad-data",
-              "name": "r2c_david.db-bad-data",
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "rule-board-audit"
-                ]
-              },
-              "shortDescription": {
-                "text": "Semgrep Finding: r2c_david.db-bad-data"
-              }
-            }
-          ],
-          "semanticVersion": "1.89.0"
-        }
-      }
-    }
-  ],
-  "version": "2.1.0"
+    ],
+    "version": "2.1.0"
 }

@@ -1,5 +1,3 @@
-
-
 def persist_data(data):
     db(data)
     
